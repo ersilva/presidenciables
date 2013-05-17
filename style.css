@@ -19,6 +19,7 @@ body{
 	color:#BD2A0E;
 	position:relative;
 	font-size:30px;
+	background-color:white;
 }
 
 .content{
@@ -48,30 +49,47 @@ body{
 	width:200px;
 	/*border:1px solid black;*/
 }
+.box_perfil .box_photo h2{
+	text-align:center;
+	}
+.box_perfil .box_photo img{
+	margin-left:25px;
+}
 
 .box_perfil .box_prom{
 	float:left;
 	margin-top:10px;
 	margin-left:10px;
-	border:1px solid black;
 	width:500px;
 	height:180px;
 
 }
 
 .box_perfil .box_prom .single_prom{
-	float:left;
-	margin-left:20px;
-	margin-top:10px;
-	width:400px;
 	font-weight: 700;
 	font-size:15px;
+	padding:5px 15px 5px 15px;
+}
+.box_perfil .box_prom .first{
+	background-color:rgba(0,0,0,0.05);
 }
 
 .box_perfil .box_actions{
 	float:left;
 	margin-left:10px;
-	margin-top:15px;
+	margin-top:10px;
+}
+
+.box_perfil input[type=button]{
+	border:0px;
+	color:white;
+	background-color:rgb(0,0,0,1);
+	cursor: auto;
+	font-size:14px;
+	padding:5px 10px 5px 10px;
+	border-radius:3px;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
 }
 /********************PAGINA PERFIL************************/
 
@@ -143,20 +161,6 @@ body{
 	background-color: #1C44BD;
 	color:white;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .clear{
