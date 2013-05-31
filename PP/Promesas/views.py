@@ -1,7 +1,9 @@
 from django.shortcuts import render
 
 from Promesas.models import Candidato
-from Promesas.models import Promesa
+from Promesas.models import 
+
+from django.utils import timezone
 
 def index(request):
     candidatos_list = Candidato.objects.all()
