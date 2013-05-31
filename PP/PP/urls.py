@@ -6,7 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^Promesas', include('Promesas.urls')),
+    url(r'^Promesas/', include('Promesas.urls')),
     # url(r'^PP/', include('PP.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

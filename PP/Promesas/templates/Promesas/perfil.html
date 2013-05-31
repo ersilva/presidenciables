@@ -1,7 +1,8 @@
 <html>
 	<head>
 		<title>Promesas Políticas</title>
-		<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+		{% load staticfiles %}
+		<link rel="stylesheet" type="text/css" href="{% static 'Promesas/style.css' %}" media="screen" />
 		<meta charset="UTF-8" />
 	</head>
 	<body>
@@ -17,7 +18,7 @@
 				<h1> Detalle del candidato </h1>
 				<div class="box_bio">
 					<div class="box_photo_name">
-						<h2>Álvaro Uribe</h2>
+						<h2>{{ candidato.nombre }}</h2>
 						<div class="box_photo">
 							<img src="http://americalatinaunida.files.wordpress.com/2009/08/alvaro-uribe2.jpg" height="150" width="100" />
 

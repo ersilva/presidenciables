@@ -1,5 +1,13 @@
 from django.shortcuts import render
 
+from Promesas.models import Candidato
+
 def index(request):
-    context = {}
+    candidatos_list = Candidato.objects.all()
+    context = {'candidatos_actual_list': candidatos_list}
     return render(request, 'Promesas/index.html', context)
+
+def perfil(request,candidato_id):
+	candidato_single = Candidato.objects.get(id = candidato_id)
+	context = {'candidato': candidato_single}
+	return render(request, 'Promesas/perfil.html', context)
