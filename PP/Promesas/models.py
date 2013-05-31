@@ -16,4 +16,4 @@ class Promesa(models.Model):
 	fuente = models.CharField(max_length=200)
 	fecha = models.DateTimeField('date published')
 	lugar = models.CharField(max_length=100)
-
+	descripcion = models.CharField(max_length=500)
