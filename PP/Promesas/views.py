@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 from Promesas.models import Candidato
+from Promesas.models import Promesa
 
 def index(request):
     candidatos_list = Candidato.objects.all()
