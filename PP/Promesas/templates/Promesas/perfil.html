@@ -45,11 +45,15 @@
 						</strong>
 					</h2>
 					<div class="form_upload_prom">
-						<form method="POST">
-						<h3>Nombre de la Promesa </h3>
-						<input type="text" /> <br/>
-						<h3>Detalle de la Promesa </h3>
-						<textarea> </textarea> <br/>
+						<form method="POST" action = "{% url 'perfil' candidato.id %}">
+						{% csrf_token %}
+						<h3>Nombre de informante </h3>
+						<input type="text" name="informante" id="informante" /> <br/>
+						<h3>Fuente </h3>
+						<input type="text" name="fuente" id="fuente" /> <br/>
+						<h3>Lugar</h3>
+						<input type="text" name="lugar" id="lugar" />
+						<br/>
 						<input type="submit" value="+ Agregar Promesa" class="submit" />
 						</form>
 					</div>
