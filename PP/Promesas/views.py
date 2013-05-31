@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from Promesas.models import Candidato
-from Promesas.models import 
+from Promesas.models import Promesa
 
 from django.utils import timezone
 
