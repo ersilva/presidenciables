@@ -30,7 +30,7 @@
 						<div class="box_prom2">
 							{% for promesa in promesas %}
 							<div class="single_prom {% cycle 'cel' ' ' %}">
-								+ {{ promesa.informante }}
+								+ {{ promesa.descripcion }}
 							</div>
 							{% endfor %}
 						</div>
@@ -52,6 +52,9 @@
 						<input type="text" name="fuente" id="fuente" /> <br/>
 						<h3>Lugar</h3>
 						<input type="text" name="lugar" id="lugar" />
+						<br/>
+						<h3>Descripcion</h3>
+						<input type="text" name="descripcion" id="descripcion" />
 						<br/>
 						<input type="submit" value="+ Agregar Promesa" class="submit" />
 						</form>

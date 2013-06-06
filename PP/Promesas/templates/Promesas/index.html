@@ -23,9 +23,9 @@
 						<h2>{{ candidato.nombre }}</h2>
 					</div>
 					<div class="box_prom">
-						{% for promesa in candidato.promesas.all[:5] %}
+						{% for promesa in candidato.promesas.all %}
 						<div class="single_prom {% cycle 'first' 'second' %}">
-							+ {{ promesa.informante }}
+							+ {{ promesa.descripcion }}
 						</div>
 						{% endfor %}
 					</div>
