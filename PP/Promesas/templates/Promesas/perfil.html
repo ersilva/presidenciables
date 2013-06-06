@@ -20,7 +20,7 @@
 					<div class="box_photo_name">
 						<h2>{{ candidato.nombre }}</h2>
 						<div class="box_photo">
-							<img src="http://americalatinaunida.files.wordpress.com/2009/08/alvaro-uribe2.jpg" height="150" width="100" />
+							<img src="http://americalatinaunida.files.wordpress.com/2009/08/alvaro-uribe2.jpg" height="150" width="150" />
 
 						</div>
 					</div>
@@ -28,12 +28,11 @@
 					<div class="box_prom1">
 						<h2>Nos ha prometido</h2>
 						<div class="box_prom2">
-							<div class="single_prom">
-								+ Volver a la gente loca
+							{% for promesa in promesas %}
+							<div class="single_prom {% cycle 'cel' ' ' %}">
+								+ {{ promesa.informante }}
 							</div>
-							<div class="single_prom">
-								+ Ayudar a empobrecer el pais
-							</div>
+							{% endfor %}
 						</div>
 					</div>
 					<div class="clear">

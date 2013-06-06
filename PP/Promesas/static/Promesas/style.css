@@ -108,8 +108,8 @@ body{
 
 .box_bio .box_photo{
 	float:left;
-	height:200px;
-	width:200px;
+	height:150px;
+	width:150px;
 	border:1px solid black;
 }
 
@@ -117,7 +117,6 @@ body{
 	float:left;
 	margin-left:20px;
 	width:500px;
-	height:180px;
 
 }
 
@@ -127,20 +126,18 @@ body{
 
 .box_bio .box_prom2{
 	float:left;
-	margin-top:10px;
-	border:1px solid black;
 	width:500px;
-	height:180px;
-
 }
 
 .box_bio .box_prom2 .single_prom{
 	float:left;
-	margin-left:20px;
-	margin-top:10px;
+	padding:7px 10px 7px 10px;
 	width:400px;
 	font-weight: 700;
 	font-size:15px;
+}
+.box_bio .box_prom2 .cel{
+	background-color:rgba(0,0,0,0.05);
 }
 
 .box_form_upload{

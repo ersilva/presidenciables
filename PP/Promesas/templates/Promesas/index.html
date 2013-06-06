@@ -23,15 +23,11 @@
 						<h2>{{ candidato.nombre }}</h2>
 					</div>
 					<div class="box_prom">
-						<div class="single_prom first">
-							+ Volver a la gente loca
+						{% for promesa in candidato.promesas.all[:5] %}
+						<div class="single_prom {% cycle 'first' 'second' %}">
+							+ {{ promesa.informante }}
 						</div>
-						<div class="single_prom second">
-							+ Ayudar a empobrecer el pais
-						</div>
-						<div class="single_prom first">
-							+ Juegos de azar y muuuuuuuucho más
-						</div>
+						{% endfor %}
 					</div>
 					<div class="box_actions">
 						<a href="{% url 'perfil' candidato.id %}"><input type="button" value="Ver mas" /></a>

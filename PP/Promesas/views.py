@@ -12,7 +12,8 @@ def index(request):
 
 def perfil(request,candidato_id):
 	candidato_single = Candidato.objects.get(id = candidato_id)
-	if len(request.POST) > 0 :
+	if request.method == 'POST':
 		candidato_single.promesas.create(informante = request.POST['informante'] , fuente = request.POST['fuente'] , fecha = timezone.now() , lugar = request.POST['lugar'])
-	context = {'candidato': candidato_single}
+	promesas_list = candidato_single.promesas.all()
+	context = {'candidato': candidato_single , 'promesas': promesas_list}
 	return render(request, 'Promesas/perfil.html', context)
