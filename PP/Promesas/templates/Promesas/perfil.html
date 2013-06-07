@@ -60,10 +60,20 @@
 						</form>
 					</div>
 				</div>
-
+			<div class="promesas box_prom2" style="display: none;">
+			{% for promesa in promesas %}
+				<div class="promesa-{{ forloop.counter0 }}">
+					- {{ promesa.descripcion }}
+					informante: {{ promesa.informante }}
+					fuente: {{ promesa.fuente }}
+					fecha: {{ promesa.fecha }}
+					lugar: {{ promesa.lugar }}
+				</div>
+			{% endfor %}
+			</div>
 			</div>
 		</div>
-		<div calss="wrapper">
+		<div class="wrapper">
 			<div class="footer">
 			</div>
 		</div>
