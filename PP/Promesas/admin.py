@@ -13,7 +13,7 @@ class PromesaAdmin(admin.ModelAdmin):
 	('Fuentes', {'fields': ['informante', 'fuente','lugar']}),
 	]
 	
-	list_display = ('descripcion', 'fecha', 'publicada_recientemente')
+	list_display = ('descripcion', 'candidato', 'fecha', 'publicada_recientemente')
 	list_filter = ['fecha']
 	search_fields = ['candidato']
 

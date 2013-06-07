@@ -27,7 +27,7 @@ class Promesa(models.Model):
 	
 	def __unicode__(self):
 		##return self.nombre 
-		return self.candidato.nombre, "-", self.lugar
+		return "De " + self.candidato.nombre + " por " + self.informante
 	
 	def publicada_recientemente(self):
 		return self.fecha >= timezone.now() - datetime.timedelta(days=30)
