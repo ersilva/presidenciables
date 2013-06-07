@@ -23,7 +23,7 @@
 						<h2>{{ candidato.nombre }}</h2>
 					</div>
 					<div class="box_prom">
-						{% for promesa in candidato.promesas.all %}
+						{% for promesa in candidato.promesas.all|slice:":5" %}
 						<div class="single_prom {% cycle 'first' 'second' %}">
 							+ {{ promesa.descripcion }}
 						</div>
