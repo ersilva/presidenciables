@@ -3,6 +3,7 @@ from django.contrib import admin
 from Promesas.models import Promesa
 from Promesas.models import Candidato
 from Promesas.models import Partido
+from Promesas.models import Pacto
 
 class PromesaAdmin(admin.ModelAdmin):
 	fieldsets = [
@@ -18,5 +19,6 @@ class PromesaAdmin(admin.ModelAdmin):
 	search_fields = ['candidato']
 
 admin.site.register(Partido)
+admin.site.register(Pacto)
 admin.site.register(Candidato)
 admin.site.register(Promesa, PromesaAdmin)

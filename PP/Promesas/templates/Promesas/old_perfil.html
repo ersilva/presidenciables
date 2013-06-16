@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<title>Promesas Políticas</title>
+		{% load staticfiles %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" media="screen" />
+		<meta charset="UTF-8" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="header">
+			<h1>
+				Promesas Políticas
+			</h1>
+			</div>
+		</div>
+		<div class="wrapper">
+			<div class="content">
+				<h1> Detalle del candidato </h1>
+				<div class="box_bio">
+					<div class="box_photo_name">
+						<h2>{{ candidato.nombre }}</h2>
+						<div class="box_photo">
+						<img src="{% static 'img/politicos/'|add:candidato.foto %}" height="150" width="120" />
+					</div>
+					</div>
+
+					<div class="box_prom1">
+						<h2>Nos ha prometido</h2>
+						<div class="box_prom2">
+							{% for promesa in promesas %}
+							<div class="single_prom {% cycle 'cel' ' ' %}">
+								+ {{ promesa.descripcion }}
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="clear">
+					</div>
+				</div>
+				<div class="box_form_upload">
+					<h2>¿Deseas contribuir? Cuéntanos qué más ha prometido 
+						<strong class="name">{{ candidato.nombre }}
+						</strong>
+					</h2>
+					<div class="form_upload_prom">
+						<form method="POST" action = "{% url 'perfil' candidato.id %}">
+						{% csrf_token %}
+						<h3>Nombre de informante </h3>
+						<input type="text" name="informante" id="informante" /> <br/>
+						<h3>Fuente </h3>
+						<input type="text" name="fuente" id="fuente" /> <br/>
+						<h3>Lugar</h3>
+						<input type="text" name="lugar" id="lugar" />
+						<br/>
+						<h3>Descripcion</h3>
+						<input type="text" name="descripcion" id="descripcion" />
+						<br/>
+						<input type="submit" value="+ Agregar Promesa" class="submit" />
+						</form>
+					</div>
+				</div>
+			<div class="promesas box_prom2" style="display: none;">
+			{% for promesa in promesas %}
+				<div class="promesa-{{ forloop.counter0 }}">
+					- {{ promesa.descripcion }}
+					informante: {{ promesa.informante }}
+					fuente: {{ promesa.fuente }}
+					fecha: {{ promesa.fecha }}
+					lugar: {{ promesa.lugar }}
+				</div>
+			{% endfor %}
+			</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<div class="footer">
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>Promesas Políticas</title>
+		{% load staticfiles %}
+		<link rel="stylesheet" type="text/css" href="{% static 'Promesas/style.css' %}" media="screen" />
+		<meta charset="UTF-8" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="header">
+			<h1>
+				Promesas Políticas
+			</h1>
+			</div>
+		</div>
+		<div class="wrapper">
+			<div class="content">
+				<h2> Candidatos </h1>
+				{% for candidato in candidatos_actual_list %}	
+				<div class="box_perfil">
+					<div class="box_photo">
+						<img src="{% static 'img/politicos/'|add:candidato.foto %}" height="150" width="150" />
+						<h2>{{ candidato.nombre }}</h2>
+					</div>
+					<div class="box_prom">
+						{% for promesa in candidato.promesas.all|slice:":5" %}
+						<div class="single_prom {% cycle 'first' 'second' %}">
+							+ {{ promesa.descripcion }}
+						</div>
+						{% endfor %}
+					</div>
+					<div class="box_actions">
+						<a href="{% url 'perfil' candidato.id %}"><input type="button" value="Ver mas" /></a>
+					</div>
+					<div class="clear">
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+		<div calss="wrapper">
+			<div class="footer">
+			</div>
+		</div>
+	</body>
+</html>
